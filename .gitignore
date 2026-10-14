@@ -1,0 +1,59 @@
+# .NET build and publish output
+**/bin/
+**/obj/
+**/publish/
+artifacts/
+
+# IDE and local user settings
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Frontend dependencies and generated output
+node_modules/
+/frontend/dist/
+/frontend/build/
+.npm/
+
+# Test results and coverage
+TestResults/
+coverage/
+coverage-report/
+*.trx
+*.coverage
+*.coveragexml
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.temp
+
+# Local environment and secrets (keep examples tracked)
+.env
+.env.*
+!.env.example
+!.env.*.example
+/backend/appsettings.Local.json
+/backend/appsettings.*.Local.json
+/backend/Properties/launchSettings.local.json
+*.pfx
+*.p12
+
+# Local SQL Server files
+*.mdf
+*.ldf
+*.ndf
+*.bak
+
+# Runtime uploads (keep demo images in frontend/assets/images tracked)
+/backend/uploads/
+/backend/wwwroot/uploads/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini

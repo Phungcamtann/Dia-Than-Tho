@@ -141,35 +141,68 @@ Các đối tượng nghiệp vụ dự kiến gồm `ApplicationUser`, `Categor
 
 OOP cần thể hiện trong cách bảo vệ quy tắc và phối hợp giữa các đối tượng, không chỉ ở việc tạo lớp hoặc interface. Nội dung trên là định hướng thiết kế, chưa phải bằng chứng mã nguồn đã đáp ứng OOP.
 
-## 7. 📂 Cấu trúc mã nguồn dự kiến
+## 7. 📂 Cấu trúc mã nguồn
 
 ```text
-DiaThanTho/
+Dia-Than-Tho/
 ├── backend/
 │   ├── Controllers/
 │   ├── Services/
 │   │   ├── Interfaces/
 │   │   └── Implementations/
 │   ├── Entities/
+│   ├── Enums/
 │   ├── DTOs/
+│   │   ├── Auth/
+│   │   ├── Products/
+│   │   ├── Orders/
+│   │   └── Buyback/
 │   ├── Data/
-│   │   └── Configurations/
+│   │   ├── Configurations/
+│   │   └── Seed/
 │   ├── Migrations/
-│   └── Program.cs
+│   ├── Middleware/
+│   └── Properties/
 ├── frontend/
 │   ├── pages/
+│   │   ├── auth/
 │   │   ├── customer/
+│   │   │   └── buyback/
 │   │   └── admin/
 │   └── assets/
 │       ├── css/
 │       ├── js/
+│       │   ├── api/
+│       │   ├── shared/
+│       │   ├── customer/
+│       │   └── admin/
 │       └── images/
 ├── tests/
+│   ├── DiaThanTho.UnitTests/
+│   ├── DiaThanTho.IntegrationTests/
+│   └── postman/
 ├── docs/
+│   ├── requirements/
+│   ├── database/
+│   ├── api/
+│   ├── testing/
+│   └── reports/
+├── .gitignore
 └── README.md
 ```
 
-Đây là cấu trúc đề xuất cho giai đoạn triển khai, chưa phản ánh các thư mục đã tồn tại. Frontend và backend có thể được phát triển trong thư mục riêng, sau đó phục vụ cùng một website local.
+Các thư mục trên đã được tạo để chuẩn bị triển khai. Thư mục rỗng có file `.gitkeep` để Git lưu lại cấu trúc; cây thư mục lược bỏ các file này cho dễ đọc. Hiện chưa khởi tạo ứng dụng hoặc project kiểm thử, nên chưa có mã nguồn chạy được.
+
+- **Backend:** `Controllers` nhận yêu cầu HTTP; `Services` xử lý nghiệp vụ qua interface; `Entities` biểu diễn dữ liệu và hành vi; `Enums` định nghĩa trạng thái; `DTOs` chia dữ liệu API theo nghiệp vụ. `Data/Configurations` chứa cấu hình ánh xạ EF Core, `Data/Seed` chứa dữ liệu mô phỏng, `Migrations` chứa lịch sử thay đổi schema, `Middleware` xử lý yêu cầu dùng chung và lỗi API, `Properties` chứa cấu hình chạy local của project.
+- **Frontend:** `pages/auth` chứa trang đăng ký/đăng nhập; `pages/customer` chứa trang khách hàng, bao gồm luồng thu mua trong `buyback`; `pages/admin` chứa trang quản trị. `assets/js/api` chứa mã gọi API, `shared` chứa mã dùng chung, các thư mục `customer` và `admin` chứa mã tương ứng từng phân hệ.
+- **Kiểm thử:** `DiaThanTho.UnitTests` dành cho kiểm thử nghiệp vụ, `DiaThanTho.IntegrationTests` dành cho kiểm thử API/database, `postman` chứa collection và environment mẫu không có thông tin bí mật.
+- **Tài liệu:** `requirements`, `database`, `api`, `testing` và `reports` lần lượt lưu yêu cầu, thiết kế dữ liệu, tài liệu API, tài liệu kiểm thử và báo cáo dự án.
+
+Khi khởi tạo ứng dụng, bổ sung `DiaThanTho.sln` ở thư mục gốc; `DiaThanTho.Api.csproj`, `Program.cs` và `appsettings.json` trong `backend`; `index.html` trong `frontend`; cùng các file project kiểm thử tương ứng. Frontend và backend được phát triển trong thư mục riêng, sau đó cấu hình phục vụ cùng một website local.
+
+Ảnh giao diện và ảnh demo được quản lý trong `frontend/assets/images`. Ảnh người dùng tải lên được lưu riêng trong `backend/uploads` khi triển khai và bị loại khỏi Git; backend phải kiểm tra quyền khi cung cấp ảnh phiếu thu mua. Dữ liệu seed phải ghi rõ là dữ liệu mô phỏng.
+
+`.gitignore` loại trừ kết quả build, thư viện cài đặt, kết quả kiểm thử, file IDE cục bộ, log, file môi trường chứa bí mật, file database local và ảnh upload. Các file cấu hình mẫu được phép đưa vào Git nhưng không chứa mật khẩu hoặc khóa bí mật.
 
 ## 8. 📊 Dữ liệu và tiêu chí hoàn thành
 

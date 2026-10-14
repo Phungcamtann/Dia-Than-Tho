@@ -1,1 +1,1 @@
-# -a-Than-Th---N-n-t-ng-TM-T-mua-b-n-a-nh-c-v-merchandise-m-nh-c-qua-s-d-ng
+# Đĩa Than Thở - Nền tảng TMĐT mua bán đĩa nhạc và merchandise âm nhạc đã qua sử dụng.

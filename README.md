@@ -13,6 +13,8 @@ Website thương mại điện tử mua bán đĩa nhạc và merchandise âm nh
 
 🧭 Project Coordinator(PC): Định Thị Anh Thư
 
+📦 Toàn bộ thư mục dự án(WorkSpace): https://drive.google.com/drive/u/2/folders/1QWyueOqePR0wD8tAhSNxiIu12lVThjkL
+
 ## 1. 📖 Tổng quan
 
 Đĩa Than Thở dự kiến cung cấp một nơi tập trung để người yêu âm nhạc tìm kiếm đĩa vinyl, CD, album, photocard, poster và merchandise đã qua sử dụng do cửa hàng đăng bán.
